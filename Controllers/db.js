@@ -24,14 +24,14 @@ const {
   };
   
   const addItem = async (req, res) => {
-      const { Name, Availability, Price, Type, StockLeft, Description } = req.body;
+      const { Name, Availability, Price, image, StockLeft, Description } = req.body;
   
       try {
           const docRef = await addDoc(collection(db, "items"), {
               Name,
               Availability,
               Price,
-              Type,
+              image,
               StockLeft,
               Description,
           });
@@ -45,14 +45,14 @@ const {
   };
   
   const updateItem = async (req, res) => {
-    const { id, Name, Availability, Type,Price, StockLeft } = req.body;
+    const { id, Name, Availability, image,Price, StockLeft } = req.body;
     try {
       const itemDocRef = doc(db, "items", id);
   
       const updateData = {
         Name,
         Availability,
-        Type,
+        image,
         Price,
         StockLeft,
       };
