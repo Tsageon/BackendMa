@@ -67,6 +67,7 @@ const {
   
   const deleteItem = async (req, res) => {
     const { id } = req.params;
+    console.log("Attempting to delete item with ID:", id);
     try {
       const docRef = doc(db, "items", id);
       await deleteDoc(docRef);
