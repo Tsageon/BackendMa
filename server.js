@@ -4,13 +4,13 @@ const app = express();
 const cors = require('cors');
 const dbRoutes = require("./routes/db");
 const authRoutes = require("./routes/auth")
-const cartRoutes = require("./routes/cart")
+
 
 app.use(cors());
 app.use(express.json());
 app.use('/api', dbRoutes)
 app.use('/api', authRoutes)
-app.use('/api/cart', cartRoutes);
+
 
 
 app.listen(4000, () => {
