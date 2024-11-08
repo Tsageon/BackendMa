@@ -71,7 +71,7 @@ const {
     try {
       const docRef = doc(db, "items", id);
       await deleteDoc(docRef);
-      res.jso({ message: "Deleted successfuly" });
+      res.json({ message: "Deleted successfuly" });
     } catch (error) {
       console.log("Deleting item error", error);
       res.status(500).json({ error: "Failed to delete item" });
